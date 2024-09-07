@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "djoser",
     'core',
-    'school'
+    'school',
+    "ckeditor"
 ]
 
 MIDDLEWARE = [
@@ -79,15 +80,13 @@ WSGI_APPLICATION = 'school_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ganesh_school',
-        'HOST': '127.0.0.1',
-        'USER': 'root',
-        'PASSWORD': ''
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "HOST": "db",
+        "NAME": "school_backend",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "PORT": "5432",
     }
 }
 

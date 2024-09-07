@@ -10,7 +10,7 @@ from djoser.serializers import UserSerializer as BaseUserSerializer
 class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password']
+        fields = ["username", "email", "first_name", "last_name", "password"]
 
     def validate_password(self, value: str) -> str:
         return make_password(value)
@@ -19,4 +19,12 @@ class UserCreateSerializer(serializers.ModelSerializer):
 class UserSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         model = User
-        fields = ['id', 'username', 'email', 'first_name','last_name', 'is_moderator', 'is_staff']
+        fields = [
+            "id",
+            "username",
+            "email",
+            "first_name",
+            "last_name",
+            "is_moderator",
+            "is_staff",
+        ]
